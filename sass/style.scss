@@ -1,1 +1,389 @@
-@import 'bootstrap-override';
+@import 'config';
+
+.container{
+    // padding: 0 7vw;
+    width: 85vw;
+    margin: 0 auto;
+}
+p{
+    color: $gray;
+}
+.hide{
+    display: none;
+}
+
+header{
+    min-height: 6em;
+    width: 100%;
+    position: absolute;
+    display: grid;
+    align-items: center;
+    z-index: 2;
+    
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+    .logo{
+        display: grid;
+    }
+    nav{
+        display: grid;
+        position: absolute;
+        width: 100%;
+        top: 130%;
+        left: 0;
+        background: $secondary;
+        text-align: center;
+        border-radius: 10px;
+
+        ul{
+            list-style: none;
+            padding: 1.2em;
+            position: relative;
+            
+            &>*{
+                padding: 1em;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 700;
+                font-size: Max(.9rem, .5vw);
+
+                a{
+                    color: $white;
+                }
+            }
+        }
+        .nav-list::after{
+            content: "";
+            position: absolute;
+            width: 80%;
+            height: 1px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: $secodnary-light;
+        }
+        .account{
+            .signup{
+                background: $primary;
+                padding: .8em 2.2em;
+                width: 100%;
+                border-radius: 100px;
+                margin-bottom: .5em;
+                
+            }
+
+        }
+    }
+    .toggler{
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+}
+
+main{
+    background: $white;
+
+    .container{
+        display: flex;
+        flex-direction: column-reverse;
+        height: clamp(650px, 100vh, 800px);
+    }
+    .image{
+        position: relative;
+        left: 0;
+        // margin: 6em 0 1em;
+        margin-top: 6em;
+
+        img{
+            min-width: 480px;
+        }
+    }
+    .content{
+        text-align: center;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        margin: 1em 0 2em;
+
+        p{
+            font-size: Max(1rem, 1.3vw);
+        }
+        button{
+            margin: 0 auto;
+            padding: .8em 2.2em;
+            border-radius: 100px;
+
+            background: $primary;
+
+            a{ color: $white; }
+        }
+    }
+}
+
+.link-input{
+    position: relative;
+    margin-bottom: 1em;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        position: relative;
+        padding: 1.5em;
+        background: $secondary;
+        border-radius: 8px;
+        overflow: hidden;
+
+
+        button, input{
+            width: 100%;
+            padding: .5em 1em;
+            position: relative;
+            z-index: 2;
+            border-radius: 5px;
+        }
+        button{
+            background: $primary;
+            color: white;
+        }
+        .background{
+            position: absolute;
+            max-width: 100%;
+            height: 100%;
+            object-fit: cover;
+            top: 0%;
+            right: 0%;
+            z-index: 1;
+        }
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 50%;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        background: $white;
+    }
+}
+
+.link-output{
+
+    .container{
+        display: grid;
+        gap: 1em;
+    }
+    .output{
+        // padding: 1em;
+        background: $white;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        // gap: 1em;
+
+        .long-link, .short-link{
+            padding: .8em ;
+        }
+        .long-link{
+            position: relative;
+            border-bottom: .5px solid $gray;
+        }
+        .short-link{
+            color: $primary;
+        }
+        button{
+            margin: 0 1em 1em 1em;
+            padding: .5em 1em;
+            width: auto;
+            background: $primary;
+            border-radius: 5px;
+
+            a{ color: white; }
+        }
+    }
+}
+
+.features{
+    padding: 4em 0;
+    text-align: center;
+
+    .cards{
+        margin-top: 2.5em;
+        display: grid;
+        position: relative;
+        gap: 3em;
+
+        .card{
+            position: relative;
+            border-radius: 10px;
+
+            .icon{
+                position: relative;
+                z-index: 2;
+
+                img{
+                    background: $secondary;
+                    position: relative;
+                    padding: 1.4em;
+                    aspect-ratio: 1/1;
+                    clip-path: circle();
+                }
+                &::after{
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 50%;
+                    background: $white;
+                    z-index: -1;
+                }
+            }
+            .content{
+                background: $white;
+                position: relative;
+                z-index: 2;
+                padding: 2.3em 1.2em;
+
+            }
+            &:not(:last-child)::after{
+                content: "";
+                position: absolute;
+                bottom: 100;
+                left: 50%;
+                // right: 0;
+                transform: translateX(-50%);
+                height: 50%;
+                width: .5rem;
+                background: $primary;
+                z-index: 1;
+                // margin: 0 auto;
+    
+            }
+
+        }
+        
+    }
+}
+
+.boost{
+    min-height: 300px;
+    background: $secondary;
+    display: grid;
+    place-items: center;
+    position: relative;
+    color: $white;
+    text-align: center;
+
+    .container{
+        position: relative;
+        z-index: 2;
+
+        .title{
+            margin-bottom: .5em;
+        }
+        button{
+            padding: .8em 2.2em;
+            border-radius: 100px;
+            background: $primary;
+
+            a{ color: $white; }
+        }
+    }    
+    .background{
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        z-index: 1;
+    }
+}
+
+footer{
+    background: $secondary-dark;
+    padding: 4em 0;
+
+    .logo{
+        margin-bottom: 2.5em;
+        display: flex;
+        justify-content: center;
+
+        svg > path{
+            fill: $white;
+        }
+    }
+    .links{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+
+        ul{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: .5em;
+            
+            li{
+                font-size: Max(.9rem, .9vw);
+
+                a{
+                color: $secodnary-light;
+                
+
+            }
+            }
+            .name{
+                color: $white;
+            }
+            
+        }
+        .socials{
+            flex-direction: row;
+            gap: 1em;
+            font-size: 1.5rem;
+            justify-content: center;
+            
+            li>a{
+                color: $white;
+            }
+        }
+        
+    }
+}
+
+@media (min-width: 600px){
+
+    header{
+
+        nav{
+            display: flex;
+            position: relative;
+            background: none;
+            justify-content: space-between;
+
+            ul{
+                display: flex;
+
+                li>a{
+                    color: $secodnary-light;
+                }
+            }
+            .nav-list::after{
+                display: none;
+            }
+        }
+        .toggler{
+            display: none;
+        }
+    }
+
+}

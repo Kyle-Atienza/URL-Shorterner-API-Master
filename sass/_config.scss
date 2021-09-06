@@ -1,0 +1,95 @@
+//google font
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+//colors
+$primary: hsl(180, 66%, 49%);
+$secondary: hsl(257, 27%, 26%);
+$warning: hsl(0, 87%, 67%);
+
+$gray: hsl(0, 0%, 75%);
+$gray-light: #F0F1F6;
+
+$primary-dark: hsl(255, 11%, 22%);
+$secondary-dark: hsl(260, 8%, 14%);
+$secodnary-light: hsl(257, 7%, 63%);
+
+$white: #fff;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    position: relative;
+
+    background: $gray-light;
+}
+
+img{
+    max-width: 100%;
+    
+}
+
+//typography
+h1{ //heading
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2.6rem;
+    font-size: Max(2.6rem, 4.5vw);
+    line-height: 110%;
+}
+h2{ //section title
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    font-size: Max(1.5rem, 2.2vw);
+}
+h3{ //links
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    font-size: Max(1rem, 1.1vw);
+}
+h4{ //feature title
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+p{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    font-size: Max(1rem, 1vw);
+}
+.warning{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: .8rem;
+    font-style: italic;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+button{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    font-size: Max(1rem, 1vw);
+
+    width: max-content;
+    border: none;
+}
+input, input::placeholder{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    font-size: Max(1rem, 1vw);
+
+    border: 0;
+}
