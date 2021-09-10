@@ -19,7 +19,7 @@ header{
     display: grid;
     align-items: center;
     z-index: 2;
-    
+
 
     .container{
         display: flex;
@@ -44,11 +44,11 @@ header{
             list-style: none;
             padding: 1.2em;
             position: relative;
-            
+
             &>*{
                 padding: 1em;
                 font-family: 'Poppins', sans-serif;
-                font-weight: 700;
+                // font-weight: 700;
                 font-size: Max(.9rem, .5vw);
 
                 a{
@@ -73,7 +73,7 @@ header{
                 width: 100%;
                 border-radius: 100px;
                 margin-bottom: .5em;
-                
+
             }
 
         }
@@ -99,8 +99,7 @@ main{
         margin-top: 6em;
 
         img{
-            min-width: 480px;
-        }
+            min-width: 480px;        }
     }
     .content{
         text-align: center;
@@ -132,20 +131,25 @@ main{
     form{
         display: flex;
         flex-direction: column;
-        gap: 1em;
-        position: relative;
-        padding: 1.5em;
+        // gap: 1em;
+        gap: Max(1em, 1.5vw);
+
+        // padding: 1.5em;
+        padding: Max(1.5em, 2.5vw);
         background: $secondary;
         border-radius: 8px;
         overflow: hidden;
+        // flex-wrap: wrap;
 
+        position: relative;
 
         button, input{
             width: 100%;
-            padding: .5em 1em;
+            padding: Max(.5em, 1vw) 2em;
             position: relative;
             z-index: 2;
             border-radius: 5px;
+            // flex: 1;
         }
         button{
             background: $primary;
@@ -180,7 +184,7 @@ main{
         gap: 1em;
     }
     .output{
-        // padding: 1em;
+        padding: 0 1em 1em;
         background: $white;
         border-radius: 8px;
         display: flex;
@@ -192,13 +196,25 @@ main{
         }
         .long-link{
             position: relative;
-            border-bottom: .5px solid $gray;
+
+            &::after{
+                content: "";
+                position: absolute;
+                width: calc(100% + 2em);
+                height: 1px;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                background: $gray;
+                // margin: 1em 0;
+                
+            }
         }
         .short-link{
             color: $primary;
         }
         button{
-            margin: 0 1em 1em 1em;
+            // margin: 0 1em 1em 1em;
             padding: .5em 1em;
             width: auto;
             background: $primary;
@@ -264,11 +280,11 @@ main{
                 background: $primary;
                 z-index: 1;
                 // margin: 0 auto;
-    
+
             }
 
         }
-        
+
     }
 }
 
@@ -295,7 +311,7 @@ main{
 
             a{ color: $white; }
         }
-    }    
+    }
     .background{
         position: absolute;
         top: 0;
@@ -331,37 +347,40 @@ footer{
             display: flex;
             flex-direction: column;
             gap: .5em;
-            
+
             li{
                 font-size: Max(.9rem, .9vw);
 
                 a{
                 color: $secodnary-light;
-                
+
 
             }
             }
             .name{
                 color: $white;
             }
-            
+
         }
         .socials{
             flex-direction: row;
             gap: 1em;
             font-size: 1.5rem;
             justify-content: center;
-            
+
             li>a{
                 color: $white;
             }
         }
-        
+
     }
 }
 
 @media (min-width: 600px){
 
+    .container{
+        width: 75vw;
+    }
     header{
 
         nav{
@@ -383,6 +402,75 @@ footer{
         }
         .toggler{
             display: none;
+        }
+    }
+
+    main{
+
+
+        .container{
+            flex-direction: row;
+            align-items: center;
+            height: 100vh; //set min width
+            gap: 5vw;
+
+            &>*{
+                margin: 0;
+            }
+            .content{
+                flex: 1;
+                display: flex;
+                text-align: start;
+
+
+                button{
+                    margin: 0;
+                }
+            }
+            .image{
+                flex: 1;
+
+                img{
+                    position: absolute;
+                    transform: translateY(-50%);
+                    min-width: 55vw;
+                }
+            }
+        }
+    }
+
+    .link-input{
+
+        form{
+            flex-direction: row;
+
+            button{
+                width: max-content;
+            }
+        }
+    }
+
+    .link-output{
+
+        .output{
+            flex-direction: row;
+            padding: 1em;
+
+            &>*{
+                padding: 0;
+            }
+            .long-link{
+                margin-right: auto;
+
+                &::after{
+                    background: none;
+
+
+                }
+            }
+
+
+
         }
     }
 
