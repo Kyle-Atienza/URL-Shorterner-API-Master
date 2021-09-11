@@ -22,9 +22,10 @@ header{
     }
     .logo{
         display: grid;
+        min-width: 50px;
     }
     nav{
-        display: grid;
+        display: none;
         position: absolute;
         width: 100%;
         top: 130%;
@@ -32,7 +33,7 @@ header{
         background: $secondary;
         text-align: center;
         border-radius: 10px;
-
+        
         ul{
             list-style: none;
             padding: 1.2em;
@@ -42,10 +43,11 @@ header{
                 padding: 1em;
                 font-family: 'Poppins', sans-serif;
                 // font-weight: 700;
-                font-size: Max(.9rem, .5vw);
 
                 a{
                     color: $white;
+                    font-size: Max(.8rem, .5vw);
+
                 }
             }
             
@@ -71,6 +73,9 @@ header{
             }
 
         }
+    }
+    .show{
+        display: grid;
     }
     .toggler{
         font-size: 1.5rem;
@@ -246,10 +251,8 @@ main{
         gap: 3em;
 
         .card{
-            // $side-padding: 1.2em;
 
             position: relative;
-            border-radius: 10px;
 
             .icon{
                 position: relative;
@@ -271,6 +274,8 @@ main{
                     height: 50%;
                     background: $white;
                     z-index: -1;
+                    border-radius: 10px 10px 0 0;
+
                 }
             }
             .content{
@@ -279,6 +284,8 @@ main{
                 position: relative;
                 z-index: 2;
                 padding: 2.3em 1.2em;
+                border-radius: 0 0 10px 10px;
+
 
             }
             &:not(:last-child)::after{
@@ -401,27 +408,39 @@ footer{
     }
 }
 
-@media (min-width: 600px){
+@media screen and (min-width: 600px){
 
     .container{
         width: 75vw;
     }
     header{
 
+        .container{
+            gap: Max(1em, 1.5vw);
+        }
         nav{
             display: flex;
             position: relative;
             background: none;
             justify-content: space-between;
+            gap: Max(1em, 1.5vw);
+
 
             ul{
                 display: flex;
+                padding: 0;
+                align-items: center;
+                gap: Max(1em, 1.5vw);
 
-                li>a{
-                    color: $secodnary-light;
+                li{
+                    padding: 0;
 
-                    &:hover{
-                        color: $secondary-dark;
+                    a{
+                        color: $secodnary-light;
+    
+                        &:hover{
+                            color: $secondary-dark;
+                        }
                     }
                 }
                 .signup:hover{
@@ -431,6 +450,9 @@ footer{
             .nav-list::after{
                 display: none;
             }
+        }
+        .show{
+            display: flex;
         }
         .toggler{
             display: none;
