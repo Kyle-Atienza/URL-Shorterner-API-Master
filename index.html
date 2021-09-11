@@ -27,6 +27,14 @@
 
 <body>
 
+  <div class="loading" id="loader">
+    <div class="" id="load-animation" cite="https://codepen.io/RRoberts/pen/pEXWEp">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
   <header>
     <div class="container">
       <div class="logo">
@@ -65,40 +73,37 @@
   <section class="link-input">
     <div class="container">
       <!-- link input -->
-      <form action="" method="">
-        <input type="text" placeholder="Shorten a link here..." id="linkInput">
-        <!-- <p class="warning">Please add a link</p> -->
+      <form action="" method="" onsubmit="return false">
+        <div class="input">
+          <input type="text" placeholder="Shorten a link here..." id="linkInput">
+          <p class="warning" id="warningText"></p>
+
+        </div>
         <button type="" id="submitLink">Shorten It!</button>
-        <img src="images/bg-shorten-mobile.svg" alt="" class="background mobile">
-        <img src="images/bg-shorten-desktop.svg" alt="" class="background desktop">
+
 
       </form>
+      <!-- <p class="warning">Please add a link</p> -->
+      <img src="images/bg-shorten-mobile.svg" alt="" class="background mobile">
+      <img src="images/bg-shorten-desktop.svg" alt="" class="background desktop">
     </div>
   </section>
 
   <!-- link output -->
   <section class="link-output">
-    <div class="container">
+    <div class="container" id="resultLinkContainer">
       <div class="output">
-        <h3 class="long-link">https://www.frontendmentor.io</h3>
-        <h3 class="short-link">https://rel.ink/k4Kyk</h3>
-        <button><a href="">Copy</a></button>
+        <h3 class="long-link">First</h3>
+        <h3 class="short-link">First</h3>
+        <button id="copyLink">Copy</button>
       </div>
-
-      <!-- <div class="output copied">
-        <h3 class="long-link">https://www.frontendmentor.io</h3>
-        <h3 class="short-link">https://rel.ink/k4Kyk</h3>
-        <button><a href="">Copy</a></button>
-      </div>
-
       <div class="output">
-        <h3 class="long-link">https://www.frontendmentor.io</h3>
-        <h3 class="short-link">https://rel.ink/k4Kyk</h3>
-        <button><a href="">Copy</a></button>
-      </div> -->
+        <h3 class="long-link">Second</h3>
+        <h3 class="short-link">Second</h3>
+        <button id="copyLink">Copy</button>
+      </div>
     </div>
 
-    <!-- <div class="overlap"></div> -->
   </section>
 
 
