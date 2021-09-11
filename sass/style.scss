@@ -387,12 +387,13 @@ footer{
         }
         .socials{
             flex-direction: row;
-            gap: 1em;
-            font-size: 1.5rem;
+            gap: 1.5em;
             justify-content: center;
 
             li>a{
                 color: $white;
+            font-size: Max(1.5rem, 1.3vw);
+
                 
             }
         }
@@ -518,7 +519,7 @@ footer{
 
         .output{
             flex-direction: row;
-            padding: 1em 2em;
+            padding: Max(.5em, 1.5vh) 2em;
             align-items: center;
             gap: 1em;
 
