@@ -5,12 +5,6 @@
     width: 85vw;
     margin: 0 auto;
 }
-p{
-    color: $gray;
-}
-.hide{
-    display: none;
-}
 
 header{
     min-height: 6em;
@@ -19,7 +13,6 @@ header{
     display: grid;
     align-items: center;
     z-index: 2;
-
 
     .container{
         display: flex;
@@ -55,6 +48,7 @@ header{
                     color: $white;
                 }
             }
+            
         }
         .nav-list::after{
             content: "";
@@ -120,6 +114,10 @@ main{
             background: $primary;
 
             a{ color: $white; }
+        
+            &:hover{
+                background: lighten($primary, 30%);
+            }
         }
     }
 }
@@ -154,6 +152,10 @@ main{
         button{
             background: $primary;
             color: white;
+
+            &:hover{
+                background: lighten($primary, 30%);
+            }
         }
         .background{
             position: absolute;
@@ -222,9 +224,13 @@ main{
             width: auto;
             background: $primary;
             border-radius: 5px;
-            font-size: .8vw;
+            font-size: Max(.8vw, 1rem);
 
             a{ color: white; }
+
+            &:hover{
+                background: lighten($primary, 30%);
+            }
         }
     }
 }
@@ -317,6 +323,10 @@ main{
             background: $primary;
 
             a{ color: $white; }
+
+            &:hover{
+                background: lighten($primary, 30%);
+            }
         }
     }
     .background{
@@ -365,9 +375,10 @@ footer{
 
                 a{
                 color: $secodnary-light;
-
-
             }
+                &:hover > a{
+                    color: $primary;
+                }
             }
             .name{
                 color: $white;
@@ -382,6 +393,7 @@ footer{
 
             li>a{
                 color: $white;
+                
             }
         }
 
@@ -406,6 +418,13 @@ footer{
 
                 li>a{
                     color: $secodnary-light;
+
+                    &:hover{
+                        color: $secondary-dark;
+                    }
+                }
+                .signup:hover{
+                    background: lighten($primary, 30%);
                 }
             }
             .nav-list::after{
@@ -468,6 +487,33 @@ footer{
         }
     }
 
+    .boost{
+        .mobile{
+            display: none;
+        }
+        .desktop{
+            display: block;
+        }
+    }
+
+    footer{
+
+        .container{
+            display: flex;
+            justify-content: space-between;
+
+            .links{
+                display: flex;
+                flex-direction: row;
+                text-align: start;
+                gap: Max(5em, 8vw);
+            }
+        }
+    }
+
+}
+
+@media (min-width: 700px){
     .link-output{
 
         .output{
@@ -489,14 +535,13 @@ footer{
                 }
             }
             button{
-                width: 5vw;
+                width: Max(5vw, 5em);
             }
-
-
-
         }
     }
+}
 
+@media (min-width: 800px){
     .features{
         padding: Max(5em, 20vh) 0;
 
@@ -552,29 +597,4 @@ footer{
             }
         }
     }
-
-    .boost{
-        .mobile{
-            display: none;
-        }
-        .desktop{
-            display: block;
-        }
-    }
-
-    footer{
-
-        .container{
-            display: flex;
-            justify-content: space-between;
-
-            .links{
-                display: flex;
-                flex-direction: row;
-                text-align: start;
-                gap: Max(5em, 8vw);
-            }
-        }
-    }
-
 }
