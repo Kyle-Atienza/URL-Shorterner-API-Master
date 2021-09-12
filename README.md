@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github Repository](https://github.com/Kyle-Atienza/URL-Shorterner-API-Master)
-- Live Site URL: [Netlify Website](https://your-live-site-url.com)
+- Live Site URL: [Netlify Website](kyle-fem-shorten-url.netlify.app)
 
 ## My process
 
