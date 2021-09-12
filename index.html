@@ -73,17 +73,15 @@
   <section class="link-input">
     <div class="container">
       <!-- link input -->
+
       <form action="" method="" onsubmit="return false">
         <div class="input">
           <input type="text" placeholder="Shorten a link here..." id="linkInput">
           <p class="warning" id="warningText"></p>
-
         </div>
         <button type="" id="submitLink">Shorten It!</button>
-
-
       </form>
-      <!-- <p class="warning">Please add a link</p> -->
+
       <img src="images/bg-shorten-mobile.svg" alt="" class="background mobile">
       <img src="images/bg-shorten-desktop.svg" alt="" class="background desktop">
     </div>
@@ -92,16 +90,12 @@
   <!-- link output -->
   <section class="link-output">
     <div class="container" id="resultLinkContainer">
-      <div class="output">
+      <!-- <div class="output">
         <h3 class="long-link">First</h3>
-        <h3 class="short-link">First</h3>
-        <button id="copyLink">Copy</button>
+        <h3 class="short-link" id="toCopy1">First</h3>
+        <button id="copyLink" data-clipboard-target="#toCopy1">Copy</button>
       </div>
-      <div class="output">
-        <h3 class="long-link">Second</h3>
-        <h3 class="short-link">Second</h3>
-        <button id="copyLink">Copy</button>
-      </div>
+      54-->
     </div>
 
   </section>
@@ -206,7 +200,13 @@
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
 
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <!-- JQuery for ajax -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> /
+
+  <!-- Clipboard JS -->
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
+
+  <!-- JS Link -->
   <script src="script.js"></script>
 
 </body>

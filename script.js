@@ -1,6 +1,6 @@
 //nav toggler
-const toggler = document.getElementById("nav-toggler")
-const nav = document.getElementById("nav-header")
+const toggler = document.getElementById("nav-toggler") //toggler icon
+const nav = document.getElementById("nav-header") //navigation links
 
 toggler.addEventListener('click', () => {
     nav.classList.toggle("show")
@@ -8,10 +8,14 @@ toggler.addEventListener('click', () => {
 })
 
 
-var linkInput = document.getElementById("linkInput")
+var linkInput = document.getElementById("linkInput") //input link
 var submitLink = document.getElementById("submitLink") //submit button
 var loader = document.getElementById("loader") //loader shows when waiting for ajax
-var error = document.getElementById("warningText")
+var error = document.getElementById("warningText") //warning text
+
+var cards = document.getElementById("resultLinkContainer") //cards container
+var outputCard = cards.children //container for output cards
+var cardCounter = 1; //counter for shortened links
 
 submitLink.addEventListener('click', () => {
     var longLink = $("#linkInput").val()
@@ -19,6 +23,7 @@ submitLink.addEventListener('click', () => {
 
     //loading started
     loader.style.display = "grid";
+
     $.ajax({
         url: link,
         success: function (data) {
@@ -29,10 +34,19 @@ submitLink.addEventListener('click', () => {
 
             //add card result
             addLinkResult(longLink, shortLink)
+            cardCounter++
 
             error.innerHTML = ""
             linkInput.classList.remove("error")
 
+            for (let i = 0; i < outputCard.length; i++) {
+                var currentCard = outputCard[i]
+                var copyBtn = currentCard.querySelector("#copyLink")
+                var link = currentCard.querySelector('.short-link').innerHTML
+
+                var clipboard = new ClipboardJS(copyBtn)
+
+            }
         },
         error: function () {
             console.log("error")
@@ -44,20 +58,20 @@ submitLink.addEventListener('click', () => {
             linkInput.classList.add("error")
         }
     })
+
 })
 
 
 
-var cards = document.getElementById("resultLinkContainer") //cards container
-var outputCard = cards.children
+
 
 function addLinkResult(long, short) {
 
     var resultCard =
         `<div class="output">
             <h3 class="long-link">${long}</h3>
-            <h3 class="short-link">${short}</h3>
-            <button id="copyLink">Copy</button>
+            <h3 class="short-link" id="toCopy${cardCounter}">${short}</h3>
+            <button id="copyLink" data-clipboard-target="#toCopy${cardCounter}">Copy</button>
         </div>`
 
     cards.insertAdjacentHTML('beforeend', resultCard)
@@ -68,14 +82,10 @@ console.log(cards.children)
 for (let i = 0; i < outputCard.length; i++) {
     var currentCard = outputCard[i]
     var copyBtn = currentCard.querySelector("#copyLink")
-    var link = currentCard.querySelector('.short-link').value
 
-    // copyBtn.addEventListener("click", () => {
-    //     link.select()
-    //     link.setSelectionRange(0, 99999)
+    var link = currentCard.querySelector('.short-link').innerHTML
 
-    //     navigator.clipboard.writeText(link.value)
-    // })
+    var clipboard = new ClipboardJS(copyBtn)
 
     console.log(link)
 }
