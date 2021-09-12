@@ -75,6 +75,7 @@ function addLinkResult(long, short) {
         </div>`
 
     cards.insertAdjacentHTML('beforeend', resultCard)
+
 }
 
 console.log(cards.children)

@@ -129,6 +129,7 @@ header{
 
 main{
     background: $white;
+    overflow-x: hidden;
 
     .container{
         display: flex;
