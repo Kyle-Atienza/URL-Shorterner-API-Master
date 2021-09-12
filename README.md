@@ -29,11 +29,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![desktop](https://user-images.githubusercontent.com/60304502/132984762-21437c5c-3e85-4283-8349-503c3001969a.png)
+
+
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github Repository](https://github.com/Kyle-Atienza/URL-Shorterner-API-Master)
+- Live Site URL: [Netlify Website](https://your-live-site-url.com)
 
 ## My process
 
